@@ -60,16 +60,13 @@ When using Wavelog on a Hosted Webspace you may have no access to a command line
 5. Copy the following files and folders from the existing installation to the new folder.
     - File: `application/config/config.php`
     - File: `application/config/database.php`
-
-    - if `$config['userdata'] = "userdata";` was **DISABLED** in your old installation ([more info](../admin-guide/configuration/centralized-userdata.md)
-      - Folder: `assets/qslcard/`
-      - Folder: `images/eqsl_card_images/`
+    - if `$config['userdata'] = "userdata";` was **DISABLED** in your old installation ([more info](../admin-guide/configuration/centralized-userdata.md))
+        - Folder: `assets/qslcard/`
+        - Folder: `images/eqsl_card_images/`
     - if `$config['userdata'] = "userdata";` was **ENABLED** in your old installation
-      - Folder: `userdata/`   (or the folder which was configured and where the userdata is stored)
-
+        - Folder: `userdata/` (or the folder which was configured and where the userdata is stored)
     - if exists:
-      - File: `assets/js/sections/custom.js`  
-
+        - File: `assets/js/sections/custom.js`
 6. Delete the folder `install/` in the new folder.
 7. Now you can upload the new folder which contains all necessary files and folders mentioned above to your webspace.
 8. Reload the Page in Webbrowser
