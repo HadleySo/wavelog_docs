@@ -44,7 +44,7 @@ All topics are prefixed with the value of `mqtt_prefix` (default `wavelog/`). Th
 
 ### QSO logged via the UI
 
-```
+```text
 wavelog/qso/logged/{user_id}
 ```
 
@@ -52,7 +52,7 @@ Published each time a new contact is saved through the Wavelog web interface.
 
 ### QSO logged via the REST API
 
-```
+```text
 wavelog/qso/logged/api/{user_id}
 ```
 
@@ -60,7 +60,7 @@ Published each time a new contact is saved through the Wavelog REST API (e.g., f
 
 ### CAT (radio control) status update
 
-```
+```text
 wavelog/cat/{user_id}
 ```
 
@@ -190,6 +190,6 @@ $config['log_threshold'] = 2;  // 1 = errors only, 2 = errors + debug
 
 Published messages appear as:
 
-```
+```text
 DEBUG - published wavelog/qso/logged/1 -> {...} to MQTT broker
 ```
