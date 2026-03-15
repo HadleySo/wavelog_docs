@@ -6,7 +6,7 @@ When creating or editing the Station Profile there is a field for the HRDLOG.net
 
 Tips
 
-* If you don't know your HRDLOG.net code, it can be found at [http://www.hrdlog.net/EditUser.aspx](http://www.hrdlog.net/EditUser.aspx)
+* If you don't know your HRDLOG.net code, it can be found at [https://www.hrdlog.net/EditUser.aspx](https://www.hrdlog.net/EditUser.aspx)
 
 ## Batch Uploading
 
