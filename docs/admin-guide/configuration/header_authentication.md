@@ -1,7 +1,7 @@
 # Header Authentication - OAuth2-Proxy & Keycloak
 
 !!! example "Not implemented yet"
-    this feature is not implemented yet! Check out https://github.com/wavelog/wavelog/pull/2978 for status updates
+    this feature is not implemented yet! Check out <https://github.com/wavelog/wavelog/pull/2978> for status updates
 
 This guide explains how Wavelog can be configured to use [Keycloak](https://www.keycloak.org/) for authentication.
 
