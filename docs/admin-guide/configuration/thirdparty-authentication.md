@@ -58,6 +58,14 @@ cp application/config/sso.sample.php application/config/sso.php
 !!! tip "Already running Apache2?"
     If Apache2 is your webserver, use [`mod_auth_openidc`](apache2-mod-auth-openidc.md) instead of OAuth2 Proxy. It handles the full OIDC flow natively — no additional container or proxy needed. This is the recommended approach for Apache2 setups.
 
+### Some words about other solutions
+
+#### Login via Google, GitHub or similar public IdPs
+
+Using Google, GitHub, or similar public identity providers as a direct IdP for Wavelog is technically possible — oauth2-proxy has built-in support for both — but comes with a fundamental limitation: **these providers do not support custom user attributes in their tokens**. Wavelog requires a callsign claim in the JWT, and there is no standard way to include one with a regular Google or GitHub account.
+
+The recommended approach is to use Google or GitHub as a **social login source within Authentik or Keycloak**. The user authenticates with Google/GitHub, your IdP enriches the token with a callsign attribute you manage, and Wavelog receives a proper JWT with all required claims. This gives you the convenience of social login without sacrificing control over the token contents.
+
 ---
 
 ## Configuration Reference
