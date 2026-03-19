@@ -185,7 +185,7 @@ server {
         auth_request_set $access_token $upstream_http_x_auth_request_access_token;
         proxy_set_header X-Forwarded-Access-Token $access_token;
 
-        proxy_pass http://host.docker.internal:8084;
+        proxy_pass http://upstream:8084;
         proxy_set_header Host              $host;
         proxy_set_header X-Real-IP         $remote_addr;
         proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
@@ -199,7 +199,7 @@ server {
 
     # All other routes — no auth_request, Wavelog manages sessions itself
     location / {
-        proxy_pass http://host.docker.internal:8084;
+        proxy_pass http://upstream:8084;
         proxy_set_header Host              $host;
         proxy_set_header X-Real-IP         $remote_addr;
         proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
