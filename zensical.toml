@@ -106,7 +106,6 @@ nav = [
   {"Admin Guide" = [
     {"Configuration" = [
       "admin-guide/configuration/config-php.md",
-      "admin-guide/configuration/wavelog-php.md",
       "admin-guide/configuration/global-options.md",
       "admin-guide/configuration/https.md",
       "admin-guide/configuration/webserver.md",
