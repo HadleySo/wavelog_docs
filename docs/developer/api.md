@@ -55,7 +55,7 @@ Whenever you post QSOs to the API (via WavelogGate, via WSJT-X Improved, via $to
 
 This function allows you to stream json-embedded ADIF Exports from Wavelog for integration with 3rd-party software.
 
-Payload to be sent to the API endpoint:
+Minimal-Payload to be sent to the API endpoint:
 
 ```json
 {
@@ -75,6 +75,30 @@ Example of API response:
     "adif": "ADIF STRING"  // ADIF file with all qsos since your last pull
 }
 ```
+
+Full-Parameter-Set (for WL-Versions >2.4)
+```json
+  {
+    "key": "your-api-key", // API-Key, read-only at least
+    "station_id": 1, // Station ID for the station that we want to pull QSOs from
+    "fetchfromid": 0, // Internal database primary inside Wavelog of the last pulled QSO. Start at 0 to get all QSOs.
+    "qsl_filter": ["lotw"], // Optional QSL-Filter (Received). Possible values are: "lotw","eqsl","qsl","clublog"
+    "output_format": "json", // Optional Format-Filter. Default ADIF within JSON. if set to JSON the fields (see next) are coming as JSON
+    "fields": ["CALL", "DXCC", "QSO_DATE", "LOTW_QSLRDATE"], // Optional Fields which should be returned by JSON. Any ADIF-field is taken
+    "band": "SAT", // Optional Band-Filter
+  }
+```
+
+whereas:
+- `output_format` is default ADIF (if omitted or explicitly set)
+- if it's set to JSON, it emits the ADIF-Fields passed via the `fields` array as json.
+- if it's set to ADIF, passed `fields` are ignored
+- qsl_filter: default empty (behaves as before, doesn't take care of QSL). allowed values (besides omitting) are:
+`'lotw', 'qsl', 'eqsl', 'clublog'`. Please parse them as an array (yes, even if you pass only one) - they behave as an OR-Filter. Multiple methods can be combined. it checks if a cnf has happened.
+- band: Optional-Bandfilter. Takes 1 band (not array). Default/omitted: Any Band
+
+Additional Info:
+Result for JSON is always unique on the selected fields
 
 ### `api/radio`
 
