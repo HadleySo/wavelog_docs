@@ -77,6 +77,7 @@ Example of API response:
 ```
 
 Full-Parameter-Set (for WL-Versions >2.4)
+
 ```json
   {
     "key": "your-api-key", // API-Key, read-only at least
