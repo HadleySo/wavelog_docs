@@ -187,7 +187,7 @@ $config['auth_header_clubstation_direct'] = [
 ];
 ```
 
-For Keycloak, the `groups` claim is not provided by default, a custom client scope must be created. Instructions are available in the [Keycloak server administration guide](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_scopes). 
+For Keycloak, the `groups` claim is not provided by default, a custom client scope must be created. Instructions are available in the [Keycloak server administration guide](https://www.keycloak.org/docs/latest/server_admin/index.html#_client_scopes).
 The scope needs an [assertion mapping](https://www.keycloak.org/docs/latest/server_admin/index.html#_protocol-mappers), then under mappers add a new mapper from `Group Membership`.
 
 Authentik provides the groups claim by default.
